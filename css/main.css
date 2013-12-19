@@ -102,6 +102,15 @@ body {
     line-height: 1.6;
 }
 
+.container .inner p.meta {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.container .inner div.jiathis_style_24x24 {
+    display: inline-block;
+}
+
 .container .inner footer {
     margin-top: 10px;
     padding-top: 20px;

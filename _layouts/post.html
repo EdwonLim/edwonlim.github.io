@@ -1,9 +1,47 @@
----
-layout: default
----
-<h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ page.title }} | Edwon.me</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+<body>
+<div class="container">
+    <div class="inner">
+        {% include header.html home="false" %}
+        <hr>
+        <h2>{{ page.title }}</h2>
+        <p class="meta" >
+            {{ page.date | date_to_string }}
+            <!-- 分享组件 -->
+        <div class="jiathis_style_24x24">
+            <a class="jiathis_button_tsina"></a>
+            <a class="jiathis_button_weixin"></a>
+            <a class="jiathis_button_qzone"></a>
+            <a class="jiathis_button_renren"></a>
+        </div>
+        <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+        <!-- 分享组件 End -->
+        </p>
+        <hr/>
 
-<div class="post">
-{{ content }}
+        <div class="post">
+            {{ content }}
+        </div>
+
+        <hr />
+
+        <!-- 评论组件 -->
+        <div id="uyan_frame"></div>
+        <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1875066"></script>
+        <!-- 评论组件 End -->
+        <hr>
+        {% include footer.html %}
+    </div>
 </div>
+</body>
+</html>
