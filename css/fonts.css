@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Exo 2'), local('Exo2-Regular'), url(http://themes.googleusercontent.com/static/fonts/exo2/v1/KzoFUeaQw_faskDsymvVJqCWcynf_cDxXwCLxiixG1c.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Exo 2 Semi Bold'), local('Exo2-SemiBold'), url(http://themes.googleusercontent.com/static/fonts/exo2/v1/L7cKReMyy06lvTzTWfUEtXYhjbSpvc47ee6xR_80Hnw.woff) format('woff');
+}
