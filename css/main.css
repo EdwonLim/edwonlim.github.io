@@ -60,6 +60,43 @@ body {
     background: transparent url(/images/hr.png) 50% 0 no-repeat;
 }
 
+.container .inner .home h3 {
+    color: #008cba;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.container .inner .hone ul {
+    margin-bottom: 20px;
+}
+
+.container .inner .home ul li {
+    list-style: disc outside;
+    padding-left: 2px;
+    margin-left: 30px;
+}
+
+.container .inner .home ul li a {
+    text-decoration: none;
+    color: #d5000d;
+    line-height: inherit;
+}
+
+.container .inner .home ul li small {
+    font-size: 0.8em;
+    box-sizing: border-box;
+}
+
+.container .inner .home ul li p {
+    font-weight: 300;
+    margin-bottom: 20px;
+    margin-top: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
 .container .inner footer {
     margin-top: 10px;
     padding-top: 20px;
