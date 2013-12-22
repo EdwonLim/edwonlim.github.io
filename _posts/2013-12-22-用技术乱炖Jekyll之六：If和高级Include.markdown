@@ -34,6 +34,6 @@ summary: "本篇主要讲一下Jekyll中的If和Include。"
 
 这是一个简单的 `if` 语句，最后 `endif` 结尾，判断 `include.home` 是不是 `true`，来决定引不引入个人链接的四个图标。
 
-最后的效果：
+最后的效果： 
 
 ![单列](http://ww2.sinaimg.cn/large/71c50075jw1ebp9ptg0fdj20nj07owf9.jpg)
