@@ -2,7 +2,7 @@
 layout: post
 title: "用技术乱炖Jekyll之一：首页构建"
 date: 2013-12-20 14:00:00
-categories: blog
+category: column1
 summary: "本篇主要介绍Jekyll的目录结构，并构建一个基本个人主页的首页。"
 ---
 

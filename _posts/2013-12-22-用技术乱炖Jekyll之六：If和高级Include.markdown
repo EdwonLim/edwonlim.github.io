@@ -2,7 +2,7 @@
 layout: post
 title: "用技术乱炖Jekyll之六：If和高级Include"
 date: 2013-12-22 14:00:00
-categories: blog
+category: column1
 summary: "本篇主要讲一下Jekyll中的If和Include。"
 ---
 

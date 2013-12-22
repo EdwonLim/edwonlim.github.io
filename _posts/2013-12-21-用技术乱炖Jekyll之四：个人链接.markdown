@@ -2,7 +2,7 @@
 layout: post
 title: "用技术乱炖Jekyll之四：个人链接"
 date: 2013-12-21 14:00:00
-categories: blog
+category: column1
 summary: "本篇主要示范添如何加个人的链接，等等。"
 ---
 

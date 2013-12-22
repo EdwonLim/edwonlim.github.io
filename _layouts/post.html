@@ -33,6 +33,12 @@
             {{ content }}
         </div>
 
+        {% if page.category %}
+        <p class="back">
+            <a href="/columns/{{ page.category }}">返回专栏</a>
+        </p>
+        {% endif %}
+
         <hr />
 
         <!-- 评论组件 -->
@@ -40,6 +46,7 @@
         <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1875066"></script>
         <!-- 评论组件 End -->
         <hr>
+
         {% include footer.html %}
     </div>
 </div>

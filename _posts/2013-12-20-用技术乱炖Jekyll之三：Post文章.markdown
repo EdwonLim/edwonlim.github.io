@@ -2,7 +2,7 @@
 layout: post
 title: "用技术乱炖Jekyll之三：Post文章"
 date: 2013-12-20 18:00:00
-categories: blog
+category: column1
 summary: "本篇主要讲解Blog文章页面的构建。"
 ---
 

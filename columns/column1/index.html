@@ -1,0 +1,21 @@
+---
+layout: default
+title: 专栏：用技术乱炖Jekyll
+---
+
+
+<section class="home">
+    <h3>用技术乱炖Jekyll</h3>
+    <p>本专栏新手向，讲解流行的Jekyll框架，并一步一步建立个人主页，并乱炖开发过程中遇到的技术问题。知识覆盖面大，但是并不深入，只是简单说明，各技术的学习由读者独自完成。</p>
+    <ul>
+        {% for post in site.categories.column1 %}
+        <li>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            <small>{{ post.date | date: "%B %-d, %Y" }}</small>
+            <p>{{ post.summary }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+
+</section>
+

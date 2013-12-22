@@ -2,8 +2,8 @@
 layout: post
 title: "用技术乱炖Jekyll之七：Pagination分页"
 date: 2013-12-22 17:30:00
-categories: blog
-summary: "本篇主要介绍分页功能"
+category: column1
+summary: "本篇主要介绍分页功能。"
 ---
 
 为了搞分页，速度写了七步Blog，这样一共有8篇博文，可以尽情分页了。

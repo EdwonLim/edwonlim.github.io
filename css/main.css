@@ -59,6 +59,14 @@ body {
     margin-top: 0;
 }
 
+.container .inner header h4 {
+    font-family: 'Exo 2', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #999;
+    margin-top: -10px;
+}
+
 .container .inner header a {
     text-decoration: none;
     margin: 0 5px;
@@ -76,6 +84,16 @@ body {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 8px;
+}
+
+.container .inner .home h3 a {
+    color: #008cba;
+    text-decoration: none;
+    margin-right: 50px;
+}
+
+.container .inner .home h3 a small {
+    font-size: 12px;
 }
 
 .container .inner .hone ul {
@@ -115,7 +133,7 @@ body {
 .container .inner .home .pagination img {
     width: 12px;
     height: 12px;
-    margin: 0px 5px;
+    margin: 0 5px;
 }
 
 .container .inner .home .pagination a {
@@ -149,6 +167,16 @@ body {
 .container .inner div.jiathis_style_24x24 {
     display: inline-block;
 }
+
+.container .inner .back {
+    text-align: center;
+}
+
+.container .inner .back a {
+    color: #008cba;
+    text-decoration: none;
+}
+
 
 .container .inner footer {
     margin-top: 10px;

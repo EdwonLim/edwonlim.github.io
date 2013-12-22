@@ -2,7 +2,7 @@
 layout: post
 title: "用技术乱炖Jekyll之二：Blog列表"
 date: 2013-12-20 17:00:00
-categories: blog
+category: column1
 summary: "本篇主要讲解Blog列表的构建。"
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: "用技术乱炖Jekyll之零：介绍与安装"
 date: 2013-12-20 11:30:00
-categories: blog
+category: column1
 summary: "本篇主要介绍了Jekyll的详情，以及如果安装Jekyll的本地调试环境。"
 ---
 
