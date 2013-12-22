@@ -1,3 +1,5 @@
-name: Your New Jekyll Site
+name: Edwon.Me
 markdown: redcarpet
 pygments: true
+paginate: 5
+paginate_path: "page:num"

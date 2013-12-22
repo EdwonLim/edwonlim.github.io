@@ -7,7 +7,7 @@ title: JavaScript For Edwon
 <section class="home">
     <h3>Blogs</h3>
     <ul>
-          {% for post in site.posts %}
+          {% for post in paginator.posts %}
           <li>
               <a href="{{ post.url }}">{{ post.title }}</a>
               <small>{{ post.date | date: "%B %-d, %Y" }}</small>
@@ -15,4 +15,28 @@ title: JavaScript For Edwon
           </li>
           {% endfor %}
     </ul>
+    <div class="pagination">
+        {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}" class="previous">
+            <img src="/images/arrow-left.png">
+        </a>
+        {% else %}
+        <span class="previous">
+            <img src="/images/arrow-left.png">
+        </span>
+        {% endif %}
+        <span class="page_number">
+            {{ paginator.page }} of {{ paginator.total_pages }}
+        </span>
+        {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}" class="next">
+            <img src="/images/arrow-right.png">
+        </a>
+        {% else %}
+        <span class="next ">
+            <img src="/images/arrow-right.png">
+        </span>
+        {% endif %}
+    </div>
 </section>
+
