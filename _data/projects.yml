@@ -1,0 +1,19 @@
+- name: Weibo-PM
+  gitcafe: Weibo-PM
+  summary: "Private message manager tool of Sina Weibo fan service. 新浪微博粉丝服务私信管理工具，用于认证用户（蓝V，橙V）的自主服务。"
+
+- name: FE-Builder
+  gitcafe: FE-Builder
+  summary: "前端代码打包工具，支持JavaScript，CoffeeScript，CSS， LESS代码的预编译、打包合并、压缩等，支持实时动态打包，支持Json数据模拟。"
+
+- name: Node-Webkit-Packager
+  gitcafe: Node-Webkit-Packager
+  summary: "Node-Webkit打包工具"
+
+- name: node-less
+  gitcafe: node-less
+  summary: "Less的Node版本预编译器，将官方代码进行修改，使其代码更符合Node的标准，在任何Node环境下都可正常运行。"
+
+- name: Node-Css-Prefix
+  gitcafe: Node-Css-Prefix
+  summary: "Fix some css rule to support diffent mainstream browsers, such as add '-webkit-' or '-moz' and so on."

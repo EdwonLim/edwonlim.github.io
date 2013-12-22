@@ -1,6 +1,5 @@
 <h3>
-    <a href="/">Blogs <small>[博文]</small></a>
-    <a href="/columns/" >Column <small>[专栏]</small></a>
-    <a href="javascript:alert('还未完善此项')" >Project <small>[项目]</small></a>
-    <a href="javascript:alert('还未完善此项')" >About <small>[关于我]</small></a>
+    {% for bar in site.data.bars %}
+    <a href="{{ bar.url }}">{{ bar.name }} <small>[{{ bar.tag }}]</small></a>
+    {% endfor %}
 </h3>

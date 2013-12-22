@@ -1,0 +1,15 @@
+- name: Blogs
+  tag: 博文
+  url: "/"
+
+- name: Columns
+  tag: 专栏
+  url: "/columns/"
+
+- name: Projects
+  tag: 项目
+  url: "/project.html"
+
+- name: About
+  tag: 关于我
+  url: "/about.html"

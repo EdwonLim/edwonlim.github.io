@@ -1,0 +1,19 @@
+---
+layout: default
+title: Projects
+---
+
+
+<section class="home">
+    {% include bar.html %}
+    <ul>
+        {% for project in site.data.projects %}
+        <li>
+            <a href="http://gitcafe.com/EdwonLim/{{ project.gitcafe }}">{{ project.name }}</a>
+            <small>http://gitcafe.com/EdwonLim/{{ project.gitcafe }}</small>
+            <p>{{ project.summary }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+

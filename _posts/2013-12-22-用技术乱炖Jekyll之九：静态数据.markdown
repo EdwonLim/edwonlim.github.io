@@ -1,0 +1,50 @@
+---
+layout: post
+title: "用技术乱炖Jekyll之九：静态数据"
+date: 2013-12-22 22:00:00
+category: column1
+summary: "本篇主要讲解静态数据的应用。"
+---
+
+本步骤的代码为：`git checkout -f step_11`。
+
+在第零篇时，在目录结构时，讲到 `_data` 里存放的是静态数据。
+
+在做我的项目列表时，我用到了这个功能。
+
+我把我的项目信息，写到 `_data` 下的 `projects.yml` 文件中：
+
+{% highlight yaml %}
+    - name: Weibo-PM
+      gitcafe: Weibo-PM
+      summary: "......"
+
+    - name: FE-Builder
+      gitcafe: FE-Builder
+      summary: "....."
+{% endhighlight %}
+
+在 `project.html` 中，用 `site.data.projects` 可以取到这里的数据。
+
+然后通过循环，展示出来。
+
+{% highlight html %}
+    { % for project in site.data.projects % }
+    <li>
+        <a href="http://gitcafe.com/EdwonLim/{ { project.gitcafe } }">
+        { { project.name } }
+        </a>
+        <small>http://gitcafe.com/EdwonLim/{ { project.gitcafe } }</small>
+        <p>{ { project.summary } }</p>
+    </li>
+    { % endfor % }
+{% endhighlight %}
+
+效果如下：
+
+![效果](http://ww4.sinaimg.cn/large/71c50075jw1ebsv0pw4zwj20or08bwg5.jpg)
+
+真的非常简单，维护起来也是非常容易的。
+
+Bar也可以用这个形式去做。代码可以自己查看。
+
