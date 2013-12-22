@@ -1,0 +1,42 @@
+---
+layout: post
+title: "用技术乱炖Jekyll之零：介绍与安装"
+date: 2013-12-20 11:30:00
+categories: blog
+summary: "本篇主要介绍了Jekyll的详情，以及如果安装Jekyll的本地调试环境。"
+---
+
+## 什么是Jekyll
+
+Jekyll是一个简单的免费的Blog生成工具，类似WordPress。但是和WordPress又有很大的不同，原因是jekyll只是一个生成静态网页的工具，不需要数据库支持。可以配合很多第三方插件，做出和动态网站类似的功能，例如分享和评论。
+
+## 能部署在什么地方
+
+因为生成的是静态网页，所以可以部署到任意服务器上。
+
+当然GitHub和GitCafe都支持Jekyll的，你可以直接把源码push到上面，它会自动生成静态网页（假如你有一个域名，你也可以轻易绑定）。
+
+作为SIPC的小伙伴，你可以把源码push到工作室的git上，它在gitlab的基础上支持了Jekyll（如果有什么问题，可以联系此功能的开发者 [jian.zhang@sipc115.com](mailto:jian.zhang@sipc115.com)）。
+
+## 依赖于什么技术
+
+它是用Ruby开发的，如果你要在本地部署环境，那么本机上要有Ruby环境。并且你要写插件的话，也要用到Ruby。
+
+之外，就是前端开发的技术了，你要通过前端技术来构造只属于你自己的个人主页。
+
+最后就是Markdown，虽然说Jekyll支持很多格式，但是Markdown应该是最适合写技术性博客的，其间接和易用，可以使你更快更轻松的写博客。
+
+## 怎么安装本地环境
+
+* 第一步 安装Ruby环境。（在window下你需要安装DevKit）
+* 第二步 安装jekyll的gem：`gem install jekyll`。
+* Enjoy it！
+
+## 怎么创建一个项目并在本地测试
+
+* 创建项目：`jekyll new your_blog`。
+* `cd your_blog`，进入项目后：`jekyll serve`。
+* 用浏览器访问`http://localhost:4000/`，你就可以看到一个像模像样的博客了。
+* `jekyll build`，你会得到一个生成好的静态网站。
+
+【注】不管是 `jekyll serve` 还是 `jekyll build` 后面都可以有一些配置参数，在此就不细说了，遇到了再说。

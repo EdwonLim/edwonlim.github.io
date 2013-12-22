@@ -1,0 +1,144 @@
+---
+layout: post
+title: "用技术乱炖Jekyll之一：首页构建"
+date: 2013-12-20 14:00:00
+categories: blog
+summary: "本篇主要介绍Jekyll的目录结构，并构建一个基本个人主页的首页。"
+---
+
+## 开始之前
+
+首先，因为这是一个类似于教程的文章，代码是比较重要的，这里我用了 `git tag` 标识了每步对应的版本，可以 `git checkout -f` 获取此步骤对应的代码。
+
+示例项目就是我这个博客类的个人主页，地址：
+
+* GitCafe : [https://gitcafe.com/EdwonLim/EdwonLim](https://gitcafe.com/EdwonLim/EdwonLim)
+* 如果你是SIPC的小伙伴，可以用咱的GitLab : [http://git.sipc115.com/yang.lin/yang-lin](http://git.sipc115.com/yang.lin/yang-lin)
+
+这篇文章是第一步，所以 `clone` 完， `git checkout -f step_1` 即可得到此步骤的代码。
+
+## 文件与目录
+
+当你用命令 `jekyll new blog` 创建一个项目后，会自动创建一些文件和目录。
+
+下面说明一下这些文件和目录的作用：
+
+![目录](http://ww2.sinaimg.cn/large/71c50075jw1ebp37ywj48j208t0d6dgc.jpg)
+
+以 `_` 开头的基本上都是Jekyll的专属文件和目录，其他的大多就是静态文件。
+
+* `_layout`： 布局模板文件放置的目录。
+* `_posts`： 放置Blog的文章，markdown或者其它类型，文件名前缀是时间，后面一般是文章的标题。
+* `_site`： 生成的静态文件会在此目录下。
+
+此外还有一些其他还没用到的目录，也在此简单说明一下：
+
+* `_drafts`：草稿，现在还不发布的东西，不会生成静态html。`serve` 或 `build` 时，加参数 `--drafts`，会处理它。
+* `_includes`：被包含的文件。公共的模块（html）会放在这里。
+* `_data`：存放数据文件，拓展名是`yml`或`yaml`。用于存储数据。
+
+下面是站点的配置文件：`_config.yml`，是 `YAML` 类型的文件，用冒号简单分割 `key` 和 `value`。
+
+{% highlight yaml %}
+
+name: Your New Jekyll Site
+markdown: redcarpet
+pygments: true
+
+{% endhighlight %}
+
+这里的值以站点的整体配置，有些是用于Jekyll命令的，在此不细讲了。
+
+在你的html或markdown里，可以使用双大括号 `site.*` 来获取这里的值，例如“`{``{` `site.name` `}``}`”。
+
+不带 `_` 开头的文件和文件夹，都是静态的目录，会直接对应到静态文件的目录。
+
+基本介绍就此结束，读读即可，主要是实践，写一写就都清楚了。
+
+## index.html
+
+熟悉的 `index.html` ，大家第一次做网页命名的名字应该就是这个，很亲切吧。
+
+这个HTML文件的代码分两部分，开头部分，类似于 `_config.yml` 的东西。
+
+{% highlight yaml %}
+
+---
+layout: default
+title: JavaScript For Edwon
+---
+
+{% endhighlight %}
+
+* `layout: default`：使用的模板是 `_layouts\default.html`
+* `title: JavaScript For Edwon`：是这个页面的标题
+
+在你的html或markdown里，可以使用双大括号 `page.*` 来获取这里的值，例如“`{``{` `page.title` `}``}`”
+
+## default.html
+
+这是一个模板文件，是比较完整完整的HTML页。
+
+{% highlight html %}
+<title>{ { page.title } } | Edwon.me</title>
+{% endhighlight %}
+
+这个是网页的标题，这里你会看到获取page的title，也就是 `index.html` 头部的title。
+
+![title](http://ww2.sinaimg.cn/large/71c50075jw1ebp3g711xyj2074018744.jpg)
+
+Body的内容如下：
+
+{% highlight html %}
+<div class="container">
+    <div class="inner">
+        { % include header.html % }
+        <hr />
+        content
+        <hr />
+        { % include footer.html % }
+    </div>
+</div>
+{% endhighlight %}
+
+这里，出现了 `include`，作用是把 `_includes/header.html` 和 `_includes/footer.html` 的html片段插入到此处。
+
+## 本期乱炖HTML语义化
+
+HTML5中多出了很多标签，例如 `header`、`footer`、`nav`、`article`、`aside`、`section`等标签。
+
+从功能上讲，它们和`div`没有什么区别，但是它区分了内容的类型。
+
+优点是：
+* 结构更好，更利于搜索引擎的抓取（SEO的优化）和开发人员的维护(可维护性更高，因为结构清晰，so易于阅读)。
+* 更有利于特殊终端的阅读(手机，个人助理等），它们会根据标签分析内容。
+
+## 远程字体
+
+而且为了美观，我引入了修改后的CSS，特别要说的是CSS3的远程字体功能。
+
+{% highlight css %}
+@font-face {
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Exo 2'), local('Exo2-Regular'), url(path/to/font.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Exo 2 Semi Bold'), local('Exo2-SemiBold'), url(path/to/font.woff) format('woff');
+}
+{% endhighlight %}
+
+有时候，真不需要自己搞所有的东西，比如说字体可以直接从google引，具体请见`font.css`。
+
+这样你就看到了一个比较好看的页面的样子。
+
+![Step1](http://ww4.sinaimg.cn/large/71c50075jw1ebp4c7w2wgj20m7074t99.jpg)
+
+### `index.html` 的另一部分呢？将在下篇进行讲解。
+
+【注】：*由于失误，`step_1`版本的`index.html`并不完整，但影响并不大，请以此教程为准，敬请见谅。*

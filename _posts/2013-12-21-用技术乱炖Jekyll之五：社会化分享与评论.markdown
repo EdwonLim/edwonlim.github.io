@@ -1,0 +1,67 @@
+---
+layout: post
+title: "用技术乱炖Jekyll之五：社会化分享与评论"
+date: 2013-12-21 18:00:00
+categories: blog
+summary: "本篇主要构建社会化分享与评论的功能。"
+---
+
+做为一个文章为核心的Web应用（Blog），分享和评论是并不可少的，但是作为一个静态站，怎么实现这样的功能呢？
+
+况且，这个专栏是新手向的，开发分享和评论功能，对于一个新手来说不是非常容易。是否有更容易的方法呢？
+
+第三方组件：[JiaThis](http://www.jiathis.com/)
+
+它提供国内的社会化分享、评论和推荐功能，只需要很少的代码，就可以把功能加载自己的页面上，非常适合非技术人员或技术新手使用。
+
+在这里，用到了它的两个功能，社会化分享和评论。
+
+## 社会化评论
+
+因为评论相比于分享更简单，所以先实现评论的功能。
+
+它的社会化评论功能称作“友言”。
+
+![友言](http://ww2.sinaimg.cn/large/71c50075jw1ebsg6468nfj20sf0ca40m.jpg)
+
+注册后，你可以点击“获取代码”获取仅仅 **2** 行的部署代码。
+
+{% highlight html %}
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=你的id"></script>
+{% endhighlight %}
+
+只需把这两个行代码加入到相应位置，你就得到的评论功能：浏览者，可以匿名评论，或者登录社交账号后，实名评论，并可以选择把评论内容转发到社交平台。
+
+*注：你要有一个域名，才能使用它，因为它是根据url来确定，评论的目标的。（SIPC的小伙伴，你使用Git115的Page服务就可以）*
+
+![评论](http://ww4.sinaimg.cn/large/71c50075jw1ebp8tmjv7qj20pd0ay0ui.jpg)
+
+此步：`git checkout -f step_6`
+
+## 社会化分享
+
+“加网”：
+
+![友加](http://ww4.sinaimg.cn/large/71c50075jw1ebsi0of2c0j20tx08mabt.jpg)
+
+上面是截图，有很多样式，我用的是工具栏的形式，你可以点击“获取代码”获取代码。
+
+{% highlight html %}
+    <div class="jiathis_style_24x24">
+        <a class="jiathis_button_tsina"></a>
+        <a class="jiathis_button_weixin"></a>
+        <a class="jiathis_button_qzone"></a>
+        <a class="jiathis_button_renren"></a>
+    </div>
+    <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8">
+    </script>
+{% endhighlight %}
+
+这段代码还是很好读的，是吧。
+
+把这段代码粘贴到相应位置就行了，这样你的页面就可以拥有分享功能的。
+
+![分享](http://ww1.sinaimg.cn/large/71c50075jw1ebp9hh99t6j20lq05tq3d.jpg)
+
+此步：`git checkout -f step_7`

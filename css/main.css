@@ -113,6 +113,21 @@ body {
     margin-right: 10px;
 }
 
+.container .inner .post img {
+    max-width: 796px;
+    border: 1px #000000 solid;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px #000000;
+}
+
+.container .inner .post .highlight {
+    border-radius: 10px;
+}
+
+.container .inner .post .highlight pre {
+    padding: 10px 15px;
+}
+
 .container .inner div.jiathis_style_24x24 {
     display: inline-block;
 }

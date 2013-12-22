@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "我眼中的JavaScript和前端开发"
-date:   2013-12-19 18:00:00
+title: "我眼中的JavaScript和前端开发"
+date: 2013-12-19 18:00:00
 categories: blog
 summary: "阐述一下对JavaScript和前端开发的理解，包括对HTML5和NodeJS的看法。"
 ---
