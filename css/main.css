@@ -110,7 +110,6 @@ body {
 }
 
 .container .inner .home ul li {
-    list-style: disc outside;
     padding-left: 2px;
     display: flex;
     display: -webkit-flex;
@@ -121,6 +120,10 @@ body {
     align-items: flex-end;
     -webkit-align-items: flex-end;
     -moz-align-items: flex-end;
+}
+
+.container .inner .home ul li img {
+    margin-right: 5px;
 }
 
 .container .inner .home ul li a {
@@ -160,6 +163,10 @@ body {
 
 .container .inner .home .pagination span.page_number {
     font-size: 16px;
+}
+
+.container .inner .home .summary {
+    text-indent: 2em;
 }
 
 .container .inner p.meta {
@@ -219,6 +226,9 @@ body {
     }
     .container .inner header {
         padding-top: 0px;
+    }
+    .container .inner .post img {
+        max-width: 90%;
     }
 }
 

@@ -9,8 +9,11 @@ title: Projects
     <ul>
         {% for project in site.data.projects %}
         <li>
+            <img src="/images/browser.png">
             <a href="http://gitcafe.com/EdwonLim/{{ project.gitcafe }}">{{ project.name }}</a>
             <small>http://gitcafe.com/EdwonLim/{{ project.gitcafe }}</small>
+        </li>
+        <li>
             <p>{{ project.summary }}</p>
         </li>
         {% endfor %}
