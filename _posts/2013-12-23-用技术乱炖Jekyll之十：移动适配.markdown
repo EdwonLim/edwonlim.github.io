@@ -115,3 +115,5 @@ How Fuck，在我测试的时候竟然发现很多浏览器不支持`flex-box`�
         box-flex: 1;
     }
 {% endhighlight %}
+
+最后的效果也一样，而且在手机上大部分浏览器都支持。
