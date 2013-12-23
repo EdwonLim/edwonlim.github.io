@@ -92,28 +92,3 @@ summary: "本篇主要介绍如何对移动设备进行屏幕适配。"
 
 其他地方也用到了这个布局，代码可以自己看看，这里只是抛砖引玉。
 
-## 最后
-
-How Fuck，在我测试的时候竟然发现很多浏览器不支持`flex-box`，那只能改成`box`。
-
-我始终认为`box`是`flex-box`阉割版。
-
-直接上代码：
-
-{% highlight css %}
-    h3 {
-        display: -moz-box;
-        display: -webkit-box;
-        display: -o-box;
-        display: box;
-    }
-
-    h3 a {
-        -moz-box-flex: 1;
-        -webkit-box-flex: 1;
-        -o-box-flex: 1;
-        box-flex: 1;
-    }
-{% endhighlight %}
-
-最后的效果也一样，而且在手机上大部分浏览器都支持。
