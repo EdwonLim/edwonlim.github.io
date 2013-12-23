@@ -122,6 +122,11 @@ body {
     -moz-align-items: flex-end;
 }
 
+.container .inner .home ul li:nth-child(2n) {
+    list-style: none;
+}
+
+
 .container .inner .home ul li img {
     margin-right: 5px;
 }
