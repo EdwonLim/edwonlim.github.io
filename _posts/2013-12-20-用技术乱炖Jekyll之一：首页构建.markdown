@@ -12,7 +12,7 @@ summary: "本篇主要介绍Jekyll的目录结构，并构建一个基本个人�
 
 示例项目就是我这个博客类的个人主页，地址：
 
-* GitCafe : [https://gitcafe.com/EdwonLim/EdwonLim](https://gitcafe.com/EdwonLim/EdwonLim)
+* GitCafe : [http://github.com/EdwonLim/edwonlim.github.io](http://github.com/EdwonLim/edwonlim.github.io)
 * 如果你是SIPC的小伙伴，可以用咱的GitLab : [http://git.sipc115.com/yang.lin/yang-lin](http://git.sipc115.com/yang.lin/yang-lin)
 
 这篇文章是第一步，所以 `clone` 完， `git checkout -f step_1` 即可得到此步骤的代码。

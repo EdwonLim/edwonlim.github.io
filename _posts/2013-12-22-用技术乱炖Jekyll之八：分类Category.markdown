@@ -37,5 +37,7 @@ summary: "本篇主要介绍怎么将博文分类显示。"
 
 获取所有Blog列表时，用的是 `site.posts`，而这里用的是 `site.categories.column1`，它的作用是取 `column1` 类别的所有Blog。
 
+**在 `for` 语句最后加上 `reversed` 是把循序反过来。**
+
 最终效果是：
 ![效果](http://ww1.sinaimg.cn/large/71c50075jw1ebst4ilezuj20o50buwgz.jpg)

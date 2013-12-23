@@ -8,7 +8,6 @@ body {
 }
 
 .container {
-    background: transparent url(/images/highlight-bg.jpg) 50% 0 no-repeat;
     min-height: 595px;
 }
 
@@ -84,12 +83,22 @@ body {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 8px;
+    padding: 0 40px;
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    align-items: flex-end;
+    -webkit-align-items: flex-end;
+    -moz-align-items: flex-end;
 }
 
 .container .inner .home h3 a {
     color: #008cba;
     text-decoration: none;
-    margin-right: 50px;
+    min-width: 180px;
 }
 
 .container .inner .home h3 a small {
@@ -103,13 +112,22 @@ body {
 .container .inner .home ul li {
     list-style: disc outside;
     padding-left: 2px;
-    margin-left: 30px;
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    align-items: flex-end;
+    -webkit-align-items: flex-end;
+    -moz-align-items: flex-end;
 }
 
 .container .inner .home ul li a {
     text-decoration: none;
     color: #d5000d;
     line-height: inherit;
+    margin-right: 15px;
 }
 
 .container .inner .home ul li small {
@@ -192,6 +210,16 @@ body {
 
 .container .inner footer a:hover {
     color: #444;
+}
+
+
+@media screen and (max-width: 800px) {
+    .container .inner {
+        width: 100%;
+    }
+    .container .inner header {
+        padding-top: 0px;
+    }
 }
 
 

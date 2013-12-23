@@ -1,0 +1,93 @@
+---
+layout: post
+title: "用技术乱炖Jekyll之十：移动适配"
+date: 2013-12-23 12:00:00
+category: column1
+summary: "本篇主要介绍如何对移动设备进行屏幕适配。"
+---
+
+本步骤的代码为：`git checkout -f step_12`。
+
+## 移动互联网
+
+随着智能移动设备的增多，移动网络的完善，移动互联网成为最为热门的方向，而据统计，用户移动互联网使用时长已经超过了传统互联网。
+
+所以，Web也要适应移动设备的屏幕浏览。
+
+众所周知，移动设备的屏幕，尤其是手机屏幕，要小的多，如何让Web也，正常地在手机屏幕上展示，将是一个非常重要的命题。
+
+所以，要对现在的个人主页进行移动适配。
+
+## Viewport Meta
+
+{% highlight html %}
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+{% endhighlight %}
+
+`Viewport Meta` 头的 `content` 的值：
+
+* `width` : 控制viewport的大小，可以指定一个值，如600， 或者特殊的值，如device-width为设备的宽度（单位为缩放为100%的CSS的像素）
+* `height` : 和width相对应，指定高度
+* `initial-scale` : 初始缩放比例，页面第一次加载时的缩放比例
+* `maximum-scale` : 允许用户缩放到的最大比例，范围从0到10.0
+* `minimum-scale` : 允许用户缩放到的最小比例，范围从0到10.0
+* `user-scalable` : 用户是否可以手动缩放，值可以是：
+  * yes、 true允许用户缩放；
+  * no、false不允许用户缩放
+
+这里我用了`width`为屏幕宽度，并不允许用户缩放。
+
+## CSS3适配
+
+不废话，直接上代码。
+
+{% highlight css %}
+@media screen and (max-width: 800px) {
+    .container .inner {
+        width: 100%;
+    }
+    .container .inner header {
+        padding-top: 0px;
+    }
+}
+{% endhighlight %}
+
+这个`css`片段意义是，当宽度小于800px时，会采用下面的`css`。
+
+这里可以用 `max-width` 、 `max-height` 、 `min-width` 和 `max-height`来设定边界值。
+
+当然，你可以用 `width` 和 `height` 匹配某一个宽度或高度，用处不大。
+
+## 弹性盒子
+
+![错乱](http://ww4.sinaimg.cn/large/71c50075jw1ebti1q66mxj20fr02a0sv.jpg)
+
+当屏幕宽度减少一定宽度时，会出现上面的情况，对于这种情况，我是不能忍的，这里就可以用弹性盒子布局了。
+
+我在它们的父元素上加了以下css:
+
+{% highlight css %}
+    h3 {
+        display: flex;
+        display: -webkit-flex;
+        display: -moz-flex;
+        flex-flow: row wrap;
+        -webkit-flex-flow: row wrap;
+        -moz-flex-flow: row wrap;
+        align-items: flex-end;
+        -webkit-align-items: flex-end;
+        -moz-align-items: flex-end;
+    }
+{% endhighlight %}
+
+* `display`：显示模式，为`flex`，为了兼容其他浏览器，加上`webkit`和`moz`。（大部分IE不支持，就不考虑了）
+* `flex-flow`：显示形式，以横排（`row`）显示，宽度不够会换行（`wrap`）。
+* `align-items`：元素对齐模式。底部对齐（`flex-end`）。
+
+详细的`flex-box`的教程可以看：[http://www.w3cplus.com/css3/flexbox-basics.html](http://www.w3cplus.com/css3/flexbox-basics.html)。
+
+设置完，这个后，你可以看到以下效果 - 不论评论的宽度是多大，不会出现断词的情况。
+
+![弹性盒子](http://ww4.sinaimg.cn/large/71c50075jw1ebtj84d92tj20i8027t8t.jpg)
+
+其他地方也用到了这个布局，代码可以自己看看，这里只是抛砖引玉。

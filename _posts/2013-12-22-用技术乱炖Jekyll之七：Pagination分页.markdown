@@ -63,7 +63,7 @@ Jekyll的分页功能称为 `Pagination` ，只需要简单的配置就能实现
 
 *更多配置和参数可以查看 [http://jekyllrb.com/docs/pagination/](http://jekyllrb.com/docs/pagination/) 官方文档。*
 
-这里的逻辑是判断，前后页有没有，有则显示连接，否则只显示文字不显示链接。
+这里的逻辑是判断前后页有没有，有则显示连接，否则只显示文字不显示链接。
 
 效果如下：
 

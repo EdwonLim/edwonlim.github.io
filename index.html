@@ -11,6 +11,8 @@ title: Blogs
           <li>
               <a href="{{ post.url }}">{{ post.title }}</a>
               <small>{{ post.date | date: "%B %-d, %Y" }}</small>
+          </li>
+          <li>
               <p>{{ post.summary }}</p>
           </li>
           {% endfor %}

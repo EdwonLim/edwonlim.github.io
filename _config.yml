@@ -3,3 +3,4 @@ markdown: redcarpet
 pygments: true
 paginate: 5
 paginate_path: "page:num"
+destination: ./../Edwon.Me/
