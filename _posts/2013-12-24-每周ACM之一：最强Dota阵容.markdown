@@ -22,7 +22,7 @@ DOTA将10个游戏玩家分为两组，分别为天灾和近卫，推倒对方�
 
 对于每一组数据：
 
-第一行一个正整数N，表示这组英雄的个数 `（5<=N<=100）`
+第一行一个正整数N，表示这组英雄的个数 `（5<=N<=20）`
 
 接下来的N行每行有4个整数 B，L，M，Z 表示该英雄编号为B，力量为L，敏捷为M，智力为Z。
 
@@ -51,4 +51,66 @@ DOTA将10个游戏玩家分为两组，分别为天灾和近卫，推倒对方�
 2 3 4 5 6
 {% endhighlight %}
 
-**解答将在下一期中公布**
+**【答案如下】**
+
+只是一道非常简单的题，直接枚举即可。
+
+{% highlight c++ %}
+#include <stdio.h>
+#include <string.h>
+#include <algorithm>
+using namespace std;
+
+struct node
+{
+    int id;
+    double li, zhi, min;
+} hero[20];
+
+int cmp(node x, node y) {
+    return x.id < y.id;
+}
+
+int main() {
+    int t, i, x1, x2, x3, x4, x5;
+    double li, min, zhi, minn, ping, s;
+    int f1, f2, f3, f4, f5;
+    scanf("%d", &t);
+    while (t--) {
+        minn = 10000000;
+        int n;
+        scanf("%d", &n);
+        for(i = 0; i < n; i ++) {
+            scanf("%d%lf%lf%lf", &hero[i].id, &hero[i].li, &hero[i].min, &hero[i].zhi);
+        }
+        sort(hero, hero + n, cmp);
+        for(x1 = 0; x1 < n - 4; x1 ++) {
+            for(x2 = x1 + 1; x2 < n - 3; x2 ++) {
+                for(x3 = x2 + 1; x3 < n-2; x3 ++) {
+                    for(x4 = x3 + 1; x4 < n-1; x4 ++) {
+                        for(x5 = x4 + 1; x5 < n; x5 ++) {
+                            li = (hero[x1].li + hero[x2].li + hero[x3].li + hero[x4].li + hero[x5].li) / 5;
+                            min = (hero[x1].min + hero[x2].min + hero[x3].min + hero[x4].min + hero[x5].min) / 5;
+                            zhi = (hero[x1].zhi + hero[x2].zhi + hero[x3].zhi + hero[x4].zhi + hero[x5].zhi) / 5;
+                            ping = (li + min + zhi) / 3;
+                            s = ((li - ping) * (li - ping) + (min - ping) * (min - ping) + (zhi - ping) * (zhi - ping)) / 3;
+                            if (s < minn) {
+                                f1 = hero[x1].id;
+                                f2 = hero[x2].id;
+                                f3 = hero[x3].id;
+                                f4 = hero[x4].id;
+                                f5 = hero[x5].id;
+                                minn = s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        printf("%d %d %d %d %d\n", f1, f2, f3, f4, f5);
+    }
+
+    return 0;
+}
+
+{% endhighlight %}

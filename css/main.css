@@ -206,6 +206,10 @@ body {
     padding: 10px 15px;
 }
 
+.container .inner .post .highlight pre code {
+    word-wrap: break-word;
+}
+
 .container .inner div.jiathis_style_24x24 {
     display: inline-block;
 }
