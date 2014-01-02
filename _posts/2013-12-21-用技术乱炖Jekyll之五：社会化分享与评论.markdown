@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "用技术乱炖Jekyll之五：社会化分享与评论"
+title: "用技术乱炖Jekyll之五：社会化分享评论"
 date: 2013-12-21 18:00:00
 category: column1
 summary: "本篇主要构建社会化分享与评论的功能。"
