@@ -277,6 +277,9 @@ body {
     .container .inner .home ul {
         padding: 10px;
     }
+    .container .inner .home ul li {
+        list-style: none;
+    }
     .container .inner .post img {
         max-width: 90%;
     }
