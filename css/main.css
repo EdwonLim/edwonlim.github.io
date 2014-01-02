@@ -271,6 +271,9 @@ body {
     .container .inner header {
         padding-top: 0px;
     }
+    .container .inner header h2 {
+        font-size: 12px;
+    }
     .container .inner .post img {
         max-width: 90%;
     }
