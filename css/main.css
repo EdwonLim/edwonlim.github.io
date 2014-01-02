@@ -104,7 +104,7 @@ body {
 .container .inner .home h3 a {
     color: #008cba;
     text-decoration: none;
-    min-width: 120px;
+    min-width: 150px;
 }
 
 .container .inner .home h3 a small {
@@ -273,6 +273,9 @@ body {
     }
     .container .inner .post img {
         max-width: 90%;
+    }
+    .container .inner .home h3 a {
+        min-width: 120px;
     }
 }
 
