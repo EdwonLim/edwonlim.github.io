@@ -1,6 +1,6 @@
 $(document).ready(function() {
     var fix_flag = false;
-    var pos = $('.inner h3.menu').position().top + 20;
+    var pos = $('.inner h3.menu').position().top + 17;
     setInterval(function() {
         var t = document.documentElement.scrollTop || document.body.scrollTop;
         if ((t >= pos) != fix_flag) {
