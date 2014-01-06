@@ -1,4 +1,9 @@
-<h3>
+<h3 class="menu">
+    {% for bar in site.data.bars %}
+    <div class="{% if include.tag == bar.name %}cur{% endif %}"><a href="{{ bar.url }}">{{ bar.name }} <small>[{{ bar.tag }}]</small></a></div>
+    {% endfor %}
+</h3>
+<h3 class="fix">
     {% for bar in site.data.bars %}
     <div class="{% if include.tag == bar.name %}cur{% endif %}"><a href="{{ bar.url }}">{{ bar.name }} <small>[{{ bar.tag }}]</small></a></div>
     {% endfor %}

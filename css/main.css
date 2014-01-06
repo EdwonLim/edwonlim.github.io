@@ -93,7 +93,7 @@ body {
 .container .inner .home h3 div {
     min-width: 150px;
     text-align: center;
-    padding-top: 10px;
+    padding: 10px 0 5px 0;
     border-top: 2px solid #CCCCCC;
     box-flex: 1;
     -webkit-box-flex: 1;
@@ -113,6 +113,10 @@ body {
 
 .container .inner .home h3 a small {
     font-size: 12px;
+}
+
+.container .inner.nofix .home h3.fix {
+    display: none;
 }
 
 .container .inner .hone ul {
@@ -277,6 +281,19 @@ body {
     }
     .container .inner .home h3 a small {
         display: block;
+    }
+
+    .container .inner.fix .home h3.menu {
+        visibility: hidden;
+    }
+
+    .container .inner.fix .home h3.fix {
+        position: fixed;
+        top: -18px;
+        left: 0;
+        width: 100%;
+        background: #e7e7e7 url(/images/body-bg.png) 0 0 repeat;
+        box-shadow: 0 1px 2px #CCCCCC;
     }
 }
 
