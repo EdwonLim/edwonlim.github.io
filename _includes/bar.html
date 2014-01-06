@@ -1,6 +1,6 @@
 <h3>
     {% for bar in site.data.bars %}
-    <a href="{{ bar.url }}">{{ bar.name }} <small>[{{ bar.tag }}]</small></a>
+    <div class="{% if include.tag == bar.name %}cur{% endif %}"><a href="{{ bar.url }}">{{ bar.name }} <small>[{{ bar.tag }}]</small></a></div>
     {% endfor %}
 </h3>
 
