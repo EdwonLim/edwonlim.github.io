@@ -298,5 +298,11 @@ body {
 }
 
 
+@media screen and (min-width: 800px) {
+    .container .inner.fix .home h3.fix {
+        display: none;
+    }
+}
+
 
 
