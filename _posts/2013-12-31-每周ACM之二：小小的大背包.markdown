@@ -50,5 +50,58 @@ from: http://acm.hdu.edu.cn/showproblem.php?pid=2191
 400
 {% endhighlight %}
 
-**答案敬请期待**
+**【答案如下】**
 
+题目模仿 : HDU的2191题，[http://acm.hdu.edu.cn/showproblem.php?pid=2191](http://acm.hdu.edu.cn/showproblem.php?pid=2191)
+
+只是一道非常简单的题，一个非常简单的背包问题。
+
+{% highlight c++ %}
+
+#include<iostream>
+using namespace std;
+#define N 102
+struct rice
+{
+	int p;
+	int h;
+	int c;
+} r[N];
+
+int main()
+{
+	int x;
+	cin >> x;
+		while( x -- )
+		{
+			int n,m;
+			cin >> n >> m;
+			int i;
+			for(i = 0; i < m; i++)
+			{
+				cin >> r[i].p >> r[i].h >> r[i].c;
+			}
+			int k,t;
+			for(i = 0; i < m - 1; i ++)
+			{
+				if (r[i].p < r[i+1].p && r[i].c > m)
+				{
+					k=r[i].p;
+					t=i;
+				} else {
+					k = r[i+1].p;
+					t = i;
+				}
+			}
+			int a, height;
+			if (k < n)
+			{
+				a = n/k;
+				height = a * r[t].h;
+				cout << height << endl;
+			}
+		}
+	return 0;
+}
+
+{% endhighlight %}
