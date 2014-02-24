@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Forever Love</title>
+    <script type="text/javascript" src="/script/jquery-1.9.1.min.js"></script>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Exo 2';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Exo 2'), local('Exo2-Regular'), url(http://themes.googleusercontent.com/static/fonts/exo2/v1/KzoFUeaQw_faskDsymvVJqCWcynf_cDxXwCLxiixG1c.woff) format('woff');
+        }
+
+        @font-face {
+            font-family: 'Exo 2';
+            font-style: normal;
+            font-weight: 600;
+            src: local('Exo 2 Semi Bold'), local('Exo2-SemiBold'), url(http://themes.googleusercontent.com/static/fonts/exo2/v1/L7cKReMyy06lvTzTWfUEtXYhjbSpvc47ee6xR_80Hnw.woff) format('woff');
+        }
+
+        body {
+            font-size: 1em;
+            line-height: 1.5;
+            background: #e7e7e7 url(/heart/image/heart_bg.jpg) 0 0 repeat;
+            font-family: 'Helvetica Neue', Helvetica, Arial, serif;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+            color: #6d6d6d;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            margin: 0 auto;
+        }
+
+        td {
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        td img {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #ff2495;
+        }
+        td img.big {
+            width: 180px;
+            height: 180px;
+            border-radius: 30px;
+        }
+    </style>
+    <script type="text/javascript">
+        var getFace = function() {
+            var index = parseInt(Math.random() * 1000) % 77 + 1;
+            var url = 'faces/';
+            if (index < 10) {
+                url += '00' + index;
+            } else if (index < 100) {
+                url += '0' + index;
+            }
+            url += '.png';
+            return url;
+        };
+        $(document).ready(function(){
+            var best = ['024', '038', '053', '069'];
+            var time = parseInt((new Date().getTime() - new Date('2012-03-16 23:59:59').getTime()) / (60 * 60 * 24 * 1000)) + 1;
+            var small = [];
+            $('h1 i').eq(0).html(time);
+            var imgs = $('img');
+            for (var i = 0, l = imgs.length; i < l; i ++) {
+                var img = imgs.eq(i);
+                if (!img.hasClass('big')) {
+                    img.attr('src', getFace());
+                    small.push(img);
+                }
+            }
+            var bi = new Date().getTime() % 4;
+            $('img.big').attr('src', 'faces/' + best[bi] + '.png');
+            setInterval(function() {
+                for (var i = 0, l = small.length; i < l; i ++) {
+                    if (Math.random() < 0.2) {
+                        (function(img) {
+                            img.hide(1000);
+                            setTimeout(function() {
+                                img.attr('src', getFace());
+                                img.show(1000);
+                            }, 1000);
+                        })(small[i])
+                    }
+                }
+            }, 3000);
+        });
+    </script>
+</head>
+<body>
+    <h1>我们相恋了 <i></i> 天 — <i>Forever Love</i></h1>
+    <table>
+        <tr>
+            <td></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+        </tr>
+        <tr>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo" colspan="3" rowspan="3"><img class="big" src=""></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td class="photo"><img src=""></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="photo"><img src=""></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>
